@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#314332" />
+  <meta name="description" content="Wedding invitation of Kaviya Sri and Aswin Shiva" />
+  <title>Kaviya Sri & Aswin Shiva — Wedding Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,600;1,500;1,600&family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --forest:#314332;
+      --deep:#1f2f23;
+      --olive:#66725d;
+      --leaf:#48614a;
+      --sage:#82927d;
+      --kraft:#b69c76;
+      --kraft-deep:#9e835f;
+      --paper:#c5ae88;
+      --paper-light:#d4c29f;
+      --ivory:#f7f0df;
+      --gold:#c9a75b;
+      --gold-soft:#dfc886;
+      --ink:#2b3029;
+      --shadow:0 22px 54px rgba(49,40,25,.22);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:#b79f7b}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 14% 8%, rgba(255,255,255,.10), transparent 20rem),
+        radial-gradient(circle at 90% 16%, rgba(49,67,50,.12), transparent 22rem),
+        linear-gradient(160deg,#b79d78,#b09670 56%,#a98f69);
+      font-family:"Cormorant Garamond", Georgia, serif;
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;z-index:-1;
+      background-image:
+        repeating-linear-gradient(0deg,rgba(255,255,255,.045) 0 1px,transparent 1px 4px),
+        repeating-linear-gradient(90deg,rgba(70,53,33,.025) 0 1px,transparent 1px 5px);
+      mix-blend-mode:multiply;
+    }
+    body.locked{overflow:hidden}
+    .hidden{display:none!important}
+
+    /* ---------- Opening doors ---------- */
+    #gate{
+      position:fixed;inset:0;z-index:1000;overflow:hidden;
+      background:linear-gradient(160deg,#1d2b20,#2a3c2c 58%,#17231a);
+      transition:opacity .75s ease,visibility .75s ease;
+    }
+    #gate.opened{opacity:0;visibility:hidden;pointer-events:none}
+    .door-stage{position:absolute;inset:0;perspective:1500px;overflow:hidden}
+    .door-panel{
+      position:absolute;top:0;bottom:0;width:50.1%;overflow:hidden;
+      background:
+        linear-gradient(rgba(184,157,116,.97),rgba(174,145,104,.97)),
+        repeating-linear-gradient(0deg,rgba(255,255,255,.06) 0 1px,transparent 1px 4px);
+      box-shadow:inset 0 0 0 1px rgba(247,240,223,.42),inset 0 0 0 14px rgba(247,240,223,.08);
+      transition:transform 1.45s cubic-bezier(.2,.72,.16,1);
+      backface-visibility:hidden;transform-style:preserve-3d;
+    }
+    .door-panel:before,.door-panel:after{content:"";position:absolute;pointer-events:none}
+    .door-panel:before{inset:18px;border:1px solid rgba(247,240,223,.76)}
+    .door-panel:after{inset:27px;border:1px solid rgba(49,67,50,.18)}
+    .door-left{left:0;transform-origin:left center;border-right:1px solid rgba(63,67,48,.35)}
+    .door-right{right:0;transform-origin:right center;border-left:1px solid rgba(63,67,48,.35)}
+    #gate.opening .door-left{transform:rotateY(-103deg)}
+    #gate.opening .door-right{transform:rotateY(103deg)}
+    .door-vine{position:absolute;top:0;bottom:0;width:128px;height:100%;z-index:2;opacity:.96}
+    .door-left .door-vine{left:-9px}
+    .door-right .door-vine{right:-9px;transform:scaleX(-1)}
+    .door-center-line{position:absolute;top:9%;bottom:9%;left:50%;width:1px;background:linear-gradient(transparent,rgba(247,240,223,.82),rgba(247,240,223,.82),transparent);z-index:4;transform:translateX(-.5px)}
+    #gate.opening .door-center-line{opacity:0;transition:opacity .2s ease}
+    .seal{
+      position:absolute;z-index:8;left:50%;top:50%;transform:translate(-50%,-50%);
+      width:96px;height:96px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;
+      color:#efd89a;background:
+        radial-gradient(circle at 30% 26%,rgba(255,255,255,.11),transparent 23%),
+        radial-gradient(circle,#405b43 0 48%,#263b2b 68%,#18261c 100%);
+      box-shadow:0 16px 34px rgba(18,28,20,.35),inset 0 0 0 5px rgba(218,190,119,.12),inset 0 0 0 8px rgba(12,27,17,.15);
+      font-family:"Great Vibes",cursive;font-size:44px;line-height:1;font-weight:400;letter-spacing:.02em;
+      transition:transform .28s ease,opacity .34s ease;
+    }
+    .seal:before{content:"";position:absolute;inset:10px;border:1px solid rgba(224,195,123,.58);border-radius:50%}
+    .seal:after{content:"";position:absolute;inset:16px;border:1px dotted rgba(224,195,123,.38);border-radius:50%}
+    .seal:active{transform:translate(-50%,-50%) scale(.95)}
+    #gate.opening .seal{transform:translate(-50%,-50%) scale(.78);opacity:0;pointer-events:none}
+    .tap-hint{
+      position:absolute;left:0;right:0;bottom:max(44px,calc(env(safe-area-inset-bottom) + 30px));z-index:8;
+      color:#f4ead2;text-align:center;font:500 10px Montserrat,sans-serif;letter-spacing:.13em;text-transform:uppercase;
+      animation:pulse 1.7s infinite;transition:opacity .25s ease
+    }
+    #gate.opening .tap-hint{opacity:0}
+    @keyframes pulse{50%{opacity:.48}}
+    .olive-fall-layer{position:absolute;inset:0;pointer-events:none;z-index:7;overflow:hidden}
+    .olive-drop{position:absolute;top:-28px;width:12px;height:23px;background:#536747;border-radius:85% 15% 82% 18%;opacity:.95;animation:oliveFall 1.75s cubic-bezier(.18,.7,.25,1) forwards;box-shadow:inset 0 0 0 1px rgba(29,43,32,.14)}
+    .olive-drop.berry{width:10px;height:13px;border-radius:50%;background:#657649}
+    @keyframes oliveFall{
+      0%{transform:translate3d(0,-20px,0) rotate(0deg);opacity:0}
+      10%{opacity:1}
+      100%{transform:translate3d(var(--drift),105vh,0) rotate(var(--spin));opacity:.15}
+    }
+
+    /* ---------- Invite ---------- */
+    #invite{opacity:0;visibility:hidden;transition:opacity .8s ease}
+    #invite.visible{opacity:1;visibility:visible}
+    .section{min-height:100svh;padding:54px 14px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .paper{
+      width:min(100%,620px);position:relative;background:
+        linear-gradient(rgba(197,174,136,.97),rgba(197,174,136,.97)),
+        repeating-linear-gradient(0deg,rgba(255,255,255,.10) 0 1px,transparent 1px 4px);
+      border:1px solid rgba(247,240,223,.8);border-radius:6px;padding:58px 28px 54px;box-shadow:var(--shadow);overflow:hidden;
+    }
+    .paper:before{content:"";position:absolute;inset:14px;border:1px solid rgba(247,240,223,.65);pointer-events:none}
+    .paper:after{content:"";position:absolute;inset:20px;border:1px solid rgba(247,240,223,.24);pointer-events:none}
+    .paper>*:not(.botanical){position:relative;z-index:2}
+
+    .botanical{position:absolute;z-index:1;pointer-events:none;width:185px;height:240px;opacity:.92}
+    .botanical.tl{left:-28px;top:-26px}
+    .botanical.br{right:-28px;bottom:-38px;transform:rotate(180deg)}
+    .botanical.sm{width:135px;height:180px;opacity:.72}
+    .botanical.tr{right:-36px;top:-28px;transform:rotate(72deg)}
+
+    .eyebrow{font:600 10px/1.5 Cinzel,serif;letter-spacing:.18em;text-transform:uppercase;color:var(--deep);text-align:center}
+    .gold-line{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:18px auto;width:70%}
+    .display{font-family:"Bodoni Moda",serif;color:var(--deep);font-weight:600;letter-spacing:.01em}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(42px,10vw,68px);line-height:1;margin-bottom:16px}
+    h2{font-size:clamp(32px,7.5vw,48px);line-height:1.05;margin-bottom:18px;color:var(--deep)}
+    p{font-size:18px;line-height:1.55}
+
+    .blessings{text-align:center;color:var(--deep);font-weight:600;line-height:1.7;font-size:12px;letter-spacing:.035em}
+    .invite-copy{text-align:center;font-style:italic;color:#4e544a;margin:26px auto 24px;max-width:440px}
+    .couple{text-align:center}
+    .couple .name{font-family:"Bodoni Moda",serif;font-size:clamp(42px,10vw,67px);font-style:italic;font-weight:600;color:#263b2b;line-height:1.04;letter-spacing:-.02em}
+    .parentage{font-size:17px;color:#4f574c;margin:9px 0 14px}
+    .with{font-family:"Bodoni Moda",serif;font-size:24px;font-style:italic;color:#866f39;margin:8px 0 10px}
+
+    /* Scratch */
+    .scratch-card{position:relative;width:min(100%,430px);margin:25px auto 5px;border-radius:8px;overflow:hidden;box-shadow:0 16px 35px rgba(57,45,28,.16);border:1px solid rgba(247,240,223,.7);background:#d1bea0}
+    .date-reveal{min-height:260px;padding:36px 22px;display:grid;place-items:center;text-align:center;background:linear-gradient(145deg,#d2c09f,#c3a77f)}
+    .date-reveal .month{font:600 12px Cinzel,serif;letter-spacing:.24em;text-transform:uppercase;color:var(--deep)}
+    .date-reveal .day{font:600 98px/.84 "Bodoni Moda",serif;color:#35513b}
+    .date-reveal .year{font:600 17px Cinzel,serif;color:#765f32;letter-spacing:.24em;margin-left:.24em}
+    #scratchCanvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}
+    .scratch-help{text-align:center;font:500 11px Montserrat,sans-serif;color:#4b554b;margin-top:17px;letter-spacing:.08em}
+
+    /* Countdown */
+    .count-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
+    .time-box{border:1px solid rgba(247,240,223,.62);padding:18px 7px;text-align:center;background:rgba(247,240,223,.16)}
+    .time-box strong{display:block;font:600 clamp(32px,9vw,48px)/1 "Bodoni Moda",serif;color:var(--deep)}
+    .time-box span{font:600 9px Cinzel,serif;letter-spacing:.15em;text-transform:uppercase;color:#5b5e52}
+
+    /* Story */
+    .story-grid{display:grid;gap:13px;margin-top:20px}
+    .story-photo{position:relative;overflow:hidden;border:1px solid rgba(247,240,223,.8);background:#aa9473;padding:6px;box-shadow:0 10px 28px rgba(60,46,30,.14)}
+    .story-photo img{display:block;width:100%;height:100%;object-fit:cover}
+    .story-photo:first-child{aspect-ratio:4/5}
+    .story-photo:last-child{aspect-ratio:4/5}
+    .story-copy{text-align:center;font-style:italic;color:#384039;margin:22px auto 0;max-width:470px;font-size:18px;line-height:1.65}
+
+    /* Venue */
+    .venue-list{display:grid;gap:14px;margin-top:22px}
+    .venue-card{padding:22px 18px;background:rgba(247,240,223,.16);border:1px solid rgba(247,240,223,.62)}
+    .venue-label{font:600 10px Cinzel,serif;color:#6c572d;letter-spacing:.16em;text-transform:uppercase}
+    .venue-card h3{font-family:"Bodoni Moda",serif;font-size:25px;color:var(--deep);margin:8px 0 5px}
+    .venue-meta{font-size:17px;margin:0;color:#41483f}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;padding:11px 17px;text-decoration:none;background:var(--forest);color:#f7f0df;font:600 10px Cinzel,serif;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 7px 16px rgba(49,67,50,.18)}
+    .btn:active{transform:translateY(1px)}
+
+    /* Thank you */
+    .thanks{text-align:center}
+    .thanks .big{font-family:"Bodoni Moda",serif;font-size:clamp(42px,10vw,68px);font-style:italic;color:var(--deep);line-height:1.05}
+    .thanks p{max-width:430px;margin:18px auto 0;color:#3f473f}
+    .signature{font-family:"Bodoni Moda",serif!important;font-size:34px!important;font-style:italic;color:var(--deep)!important;margin-top:28px!important}
+
+    /* Expiry */
+    #expired{min-height:100svh;display:none;place-items:center;padding:28px;text-align:center;background:linear-gradient(165deg,#1e2e22,#354a37);color:#f7f0df}
+    #expired.show{display:grid}
+    .expired-card{width:min(100%,480px);padding:46px 28px;border:1px solid rgba(223,200,134,.45);background:rgba(255,255,255,.04);box-shadow:0 24px 60px rgba(0,0,0,.22)}
+    .expired-card .names{font-family:"Bodoni Moda",serif;font-size:46px;font-style:italic;color:#ead89f;line-height:1.08;margin-bottom:20px}
+    .expired-card p{font-family:Montserrat,sans-serif;font-size:14px;line-height:1.7;margin:0;opacity:.9}
+
+    /* Confetti */
+    .confetti-layer{position:fixed;inset:0;pointer-events:none;z-index:900;overflow:hidden}
+    .confetti{position:absolute;top:-20px;width:7px;height:12px;border-radius:2px;animation:fall 1.8s cubic-bezier(.22,.7,.28,1) forwards}
+    @keyframes fall{to{transform:translate3d(var(--x),105vh,0) rotate(var(--r));opacity:.1}}
+    .scroll-cue{position:absolute!important;bottom:26px;left:50%;transform:translateX(-50%);font:500 9px Montserrat,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:rgba(38,59,43,.55);white-space:nowrap}
+    .scroll-cue:after{content:" ↓"}
+
+    @media(min-width:620px){
+      .section{padding:82px 28px}
+      .paper{padding:70px 52px 64px}
+      .count-grid{grid-template-columns:repeat(4,1fr)}
+      .story-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body class="locked">
+
+  <!-- Opening screen -->
+  <div id="gate" aria-label="Open wedding invitation">
+    <div class="door-stage" aria-hidden="true">
+      <div class="door-panel door-left">
+        <svg class="door-vine" viewBox="0 0 150 780" preserveAspectRatio="xMidYMid slice">
+          <g fill="none" stroke="#314332" stroke-width="2.4" stroke-linecap="round"><path d="M27 760 C96 650 34 555 92 465 C135 398 42 318 98 225 C122 184 91 113 132 27"/><path d="M54 674 C79 650 94 624 101 594"/><path d="M53 522 C81 500 98 468 105 438"/><path d="M58 360 C82 342 95 316 103 286"/><path d="M82 184 C104 164 112 140 119 114"/></g>
+          <g fill="#35503a"><ellipse cx="44" cy="706" rx="18" ry="38" transform="rotate(-53 44 706)"/><ellipse cx="83" cy="635" rx="17" ry="36" transform="rotate(42 83 635)"/><ellipse cx="48" cy="563" rx="18" ry="40" transform="rotate(-49 48 563)"/><ellipse cx="91" cy="491" rx="17" ry="36" transform="rotate(45 91 491)"/><ellipse cx="53" cy="411" rx="17" ry="37" transform="rotate(-50 53 411)"/><ellipse cx="96" cy="337" rx="17" ry="36" transform="rotate(47 96 337)"/><ellipse cx="63" cy="257" rx="17" ry="37" transform="rotate(-47 63 257)"/><ellipse cx="108" cy="181" rx="16" ry="34" transform="rotate(48 108 181)"/><ellipse cx="95" cy="93" rx="15" ry="32" transform="rotate(-37 95 93)"/></g>
+          <g fill="#708169"><ellipse cx="67" cy="688" rx="12" ry="28" transform="rotate(42 67 688)"/><ellipse cx="66" cy="539" rx="12" ry="28" transform="rotate(40 66 539)"/><ellipse cx="72" cy="387" rx="12" ry="28" transform="rotate(41 72 387)"/><ellipse cx="82" cy="236" rx="12" ry="27" transform="rotate(42 82 236)"/></g>
+          <g fill="#f1ead7"><circle cx="105" cy="586" r="6"/><circle cx="115" cy="575" r="5"/><circle cx="117" cy="592" r="5"/><circle cx="111" cy="430" r="6"/><circle cx="121" cy="419" r="5"/><circle cx="124" cy="436" r="5"/><circle cx="118" cy="269" r="6"/><circle cx="128" cy="258" r="5"/></g>
+        </svg>
+      </div>
+      <div class="door-panel door-right">
+        <svg class="door-vine" viewBox="0 0 150 780" preserveAspectRatio="xMidYMid slice">
+          <g fill="none" stroke="#314332" stroke-width="2.4" stroke-linecap="round"><path d="M27 760 C96 650 34 555 92 465 C135 398 42 318 98 225 C122 184 91 113 132 27"/><path d="M54 674 C79 650 94 624 101 594"/><path d="M53 522 C81 500 98 468 105 438"/><path d="M58 360 C82 342 95 316 103 286"/><path d="M82 184 C104 164 112 140 119 114"/></g>
+          <g fill="#35503a"><ellipse cx="44" cy="706" rx="18" ry="38" transform="rotate(-53 44 706)"/><ellipse cx="83" cy="635" rx="17" ry="36" transform="rotate(42 83 635)"/><ellipse cx="48" cy="563" rx="18" ry="40" transform="rotate(-49 48 563)"/><ellipse cx="91" cy="491" rx="17" ry="36" transform="rotate(45 91 491)"/><ellipse cx="53" cy="411" rx="17" ry="37" transform="rotate(-50 53 411)"/><ellipse cx="96" cy="337" rx="17" ry="36" transform="rotate(47 96 337)"/><ellipse cx="63" cy="257" rx="17" ry="37" transform="rotate(-47 63 257)"/><ellipse cx="108" cy="181" rx="16" ry="34" transform="rotate(48 108 181)"/><ellipse cx="95" cy="93" rx="15" ry="32" transform="rotate(-37 95 93)"/></g>
+          <g fill="#708169"><ellipse cx="67" cy="688" rx="12" ry="28" transform="rotate(42 67 688)"/><ellipse cx="66" cy="539" rx="12" ry="28" transform="rotate(40 66 539)"/><ellipse cx="72" cy="387" rx="12" ry="28" transform="rotate(41 72 387)"/><ellipse cx="82" cy="236" rx="12" ry="27" transform="rotate(42 82 236)"/></g>
+          <g fill="#f1ead7"><circle cx="105" cy="586" r="6"/><circle cx="115" cy="575" r="5"/><circle cx="117" cy="592" r="5"/><circle cx="111" cy="430" r="6"/><circle cx="121" cy="419" r="5"/><circle cx="124" cy="436" r="5"/><circle cx="118" cy="269" r="6"/><circle cx="128" cy="258" r="5"/></g>
+        </svg>
+      </div>
+      <div class="door-center-line"></div>
+    </div>
+    <div class="olive-fall-layer" id="oliveFallLayer" aria-hidden="true"></div>
+    <button class="seal" id="sealButton" aria-label="Tap to open invitation">AK</button>
+    <div class="tap-hint">Tap the seal to open</div>
+  </div>
+
+  <main id="invite">
+    <section class="section" id="welcome">
+      <article class="paper">
+        <svg class="botanical tl" viewBox="0 0 180 240" aria-hidden="true"><g fill="none" stroke="#314332" stroke-width="2"><path d="M12 228 C35 180,58 133,95 78 C120 42,144 20,168 9"/><path d="M40 177 C50 154,64 133,83 114"/><path d="M65 124 C82 100,98 78,117 58"/></g><g fill="#48614a"><ellipse cx="30" cy="194" rx="16" ry="37" transform="rotate(-48 30 194)"/><ellipse cx="51" cy="163" rx="14" ry="33" transform="rotate(-44 51 163)"/><ellipse cx="77" cy="129" rx="16" ry="36" transform="rotate(-52 77 129)"/><ellipse cx="103" cy="90" rx="15" ry="34" transform="rotate(-45 103 90)"/><ellipse cx="132" cy="53" rx="14" ry="31" transform="rotate(-51 132 53)"/></g><g fill="#73836c"><ellipse cx="54" cy="185" rx="11" ry="27" transform="rotate(32 54 185)"/><ellipse cx="83" cy="149" rx="12" ry="28" transform="rotate(36 83 149)"/><ellipse cx="111" cy="111" rx="11" ry="27" transform="rotate(39 111 111)"/><ellipse cx="144" cy="71" rx="11" ry="26" transform="rotate(42 144 71)"/></g><g fill="#f0e6cf"><circle cx="75" cy="98" r="6"/><circle cx="86" cy="92" r="5"/><circle cx="91" cy="105" r="5"/><circle cx="119" cy="43" r="5"/><circle cx="129" cy="37" r="6"/><circle cx="136" cy="49" r="5"/></g></svg>
+        <svg class="botanical br" viewBox="0 0 180 240" aria-hidden="true"><g fill="none" stroke="#314332" stroke-width="2"><path d="M12 228 C35 180,58 133,95 78 C120 42,144 20,168 9"/></g><g fill="#48614a"><ellipse cx="30" cy="194" rx="16" ry="37" transform="rotate(-48 30 194)"/><ellipse cx="51" cy="163" rx="14" ry="33" transform="rotate(-44 51 163)"/><ellipse cx="77" cy="129" rx="16" ry="36" transform="rotate(-52 77 129)"/><ellipse cx="103" cy="90" rx="15" ry="34" transform="rotate(-45 103 90)"/><ellipse cx="132" cy="53" rx="14" ry="31" transform="rotate(-51 132 53)"/></g><g fill="#73836c"><ellipse cx="54" cy="185" rx="11" ry="27" transform="rotate(32 54 185)"/><ellipse cx="83" cy="149" rx="12" ry="28" transform="rotate(36 83 149)"/><ellipse cx="111" cy="111" rx="11" ry="27" transform="rotate(39 111 111)"/><ellipse cx="144" cy="71" rx="11" ry="26" transform="rotate(42 144 71)"/></g><g fill="#f0e6cf"><circle cx="75" cy="98" r="6"/><circle cx="86" cy="92" r="5"/><circle cx="91" cy="105" r="5"/></g></svg>
+
+        <div class="eyebrow">With love & blessings</div>
+        <div class="gold-line"></div>
+        <div class="blessings">Sri Bairavar Thunai<br>Sri Manthai Muthalamman Thunai<br>Sri Muthumariamman Thunai</div>
+        <p class="invite-copy">With love and blessings, we cordially invite you to the wedding celebration of our beloved daughter</p>
+        <div class="couple">
+          <div class="name">Kaviya Sri</div>
+          <div class="parentage">Daughter of Rajendran &amp; Muthu Nagaselvi</div>
+          <div class="with">with</div>
+          <div class="name">Aswin Shiva</div>
+          <div class="parentage">Son of Senthilnathan &amp; Shanthi</div>
+        </div>
+        <div class="scroll-cue">Scroll</div>
+      </article>
+    </section>
+
+    <section class="section" id="save-date">
+      <article class="paper">
+        <svg class="botanical tl sm" viewBox="0 0 180 240" aria-hidden="true"><g fill="none" stroke="#314332" stroke-width="2"><path d="M12 228 C35 180,58 133,95 78 C120 42,144 20,168 9"/></g><g fill="#48614a"><ellipse cx="30" cy="194" rx="16" ry="37" transform="rotate(-48 30 194)"/><ellipse cx="51" cy="163" rx="14" ry="33" transform="rotate(-44 51 163)"/><ellipse cx="77" cy="129" rx="16" ry="36" transform="rotate(-52 77 129)"/><ellipse cx="103" cy="90" rx="15" ry="34" transform="rotate(-45 103 90)"/></g></svg>
+        <div class="eyebrow">Save the date</div>
+        <h2 class="display" style="text-align:center;font-style:italic">Scratch to reveal</h2>
+        <div class="scratch-card" id="scratchCard">
+          <div class="date-reveal" aria-label="Wedding date November 20 2026"><div><div class="month">November</div><div class="day">20</div><div class="year">2026</div></div></div>
+          <canvas id="scratchCanvas" aria-label="Scratch here to reveal the wedding date"></canvas>
+        </div>
+        <div class="scratch-help" id="scratchHelp">Scratch once with your finger</div>
+        <div class="scroll-cue">Continue</div>
+      </article>
+    </section>
+
+    <section class="section" id="countdown-section">
+      <article class="paper">
+        <div class="eyebrow">Counting down</div>
+        <h2 class="display" style="text-align:center;font-style:italic">Until our big day</h2>
+        <div class="gold-line"></div>
+        <div class="count-grid" id="countdown" aria-live="polite">
+          <div class="time-box"><strong id="days">00</strong><span>Days</span></div>
+          <div class="time-box"><strong id="hours">00</strong><span>Hours</span></div>
+          <div class="time-box"><strong id="minutes">00</strong><span>Minutes</span></div>
+          <div class="time-box"><strong id="seconds">00</strong><span>Seconds</span></div>
+        </div>
+        <p style="text-align:center;margin-top:24px;color:#41483f">Friday · 20 November 2026 · 6:00 AM</p>
+        <div class="scroll-cue">Our story</div>
+      </article>
+    </section>
+
+    <section class="section" id="story">
+      <article class="paper">
+        <svg class="botanical br sm" viewBox="0 0 180 240" aria-hidden="true"><g fill="none" stroke="#314332" stroke-width="2"><path d="M12 228 C35 180,58 133,95 78 C120 42,144 20,168 9"/></g><g fill="#48614a"><ellipse cx="30" cy="194" rx="16" ry="37" transform="rotate(-48 30 194)"/><ellipse cx="51" cy="163" rx="14" ry="33" transform="rotate(-44 51 163)"/><ellipse cx="77" cy="129" rx="16" ry="36" transform="rotate(-52 77 129)"/></g></svg>
+        <div class="eyebrow">Our story</div>
+        <h2 class="display" style="text-align:center;font-style:italic">From friendship to forever</h2>
+        <div class="story-grid">
+          <figure class="story-photo"><img src="couple_story_1.webp" alt="Kaviya Sri and Aswin Shiva together" loading="lazy"></figure>
+          <figure class="story-photo"><img src="couple_story_2.webp" alt="Kaviya Sri and Aswin Shiva smiling together" loading="lazy"></figure>
+        </div>
+        <p class="story-copy">Some stories begin with hello. Ours began with friendship, grew through countless laughs and little moments, and somewhere along the way, became love. And now, we're turning all those little moments into a lifetime together.</p>
+        <div class="scroll-cue">Venue</div>
+      </article>
+    </section>
+
+    <section class="section" id="venue">
+      <article class="paper">
+        <div class="eyebrow">Celebrate with us</div>
+        <h2 class="display" style="text-align:center;font-style:italic">Venue & timings</h2>
+        <div class="venue-list">
+          <div class="venue-card">
+            <div class="venue-label">Reception</div>
+            <h3>DSL Mahal</h3>
+            <p class="venue-meta">Natham Salai, Dindigul</p>
+            <p class="venue-meta"><strong>Thursday · 19 November 2026 · 6:00 PM</strong></p>
+            <a class="btn" href="https://google.com/maps?sca_esv=dbb1c812e782d699&amp;hl=en-IN&amp;output=search&amp;q=DSL+Mahal&amp;source=lnms&amp;fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832SMIiTl3t-JZ4hGJOxPbHYTU1b4eMHgVSc8-UQwsgjK03KBO1DDJ8648lulvaj_9fTENwZVNKnUKoqWCL71de65WqCrFtmmGX01Evyh9w1KJLJlwGKKxnfwHo0eGVA-tVwPoefqAX-5UVKpDVvL98HFwTwJex5MkarM0YONv1S_Z2O7K-A&amp;entry=mc&amp;ved=1t:200715&amp;ictx=111" target="_blank" rel="noopener">Open map</a>
+          </div>
+          <div class="venue-card">
+            <div class="venue-label">Wedding · Muhurtham</div>
+            <h3>Arulmigu Subramaniyaswami Thirukkovil</h3>
+            <p class="venue-meta">Natham Salai, Dindigul · opposite DSL Mahal</p>
+            <p class="venue-meta"><strong>Friday · 20 November 2026 · 6:00 AM</strong></p>
+            <a class="btn" href="https://www.google.com/maps/place/SHRI+SUBRAMANYA+SWAMY+TEMPLE/@10.3457186,77.3798418,10z/data=!4m10!1m2!2m1!1sArulmigu+Subramaniyaswami+thirukkovil,Natham+Salai,+Dindigul,+opposite+to+DSL+Mahal!3m6!1s0x3b00ab00459d4ea9:0x20c40378d751c8cf!8m2!3d10.3457186!4d77.989583!15sClNBcnVsbWlndSBTdWJyYW1hbml5YXN3YW1pIHRoaXJ1a2tvdmlsLE5hdGhhbSBTYWxhaSwgRGluZGlndWwsIG9wcG9zaXRlIHRvIERTTCBNYWhhbFpTIlFhcnVsbWlndSBzdWJyYW1hbml5YXN3YW1pIHRoaXJ1a2tvdmlsIG5hdGhhbSBzYWxhaSBkaW5kaWd1bCBvcHBvc2l0ZSB0byBkc2wgbWFoYWySAQxoaW5kdV90ZW1wbGWaAURDaTlEUVVsUlFVTnZaRU5vZEhsalJqbHZUMnRPTldReFRYaFBWMnhtWWtWR1MyUnRVbFpOV0VaMlZtNXdiV1JJWXhBQuABAPoBBAgAEDA!16s%2Fg%2F11xghwmyhr?authuser=0&amp;entry=ttu&amp;g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Open map</a>
+          </div>
+        </div>
+        <div class="scroll-cue">One last note</div>
+      </article>
+    </section>
+
+    <section class="section" id="thankyou">
+      <article class="paper thanks">
+        <svg class="botanical tl sm" viewBox="0 0 180 240" aria-hidden="true"><g fill="none" stroke="#314332" stroke-width="2"><path d="M12 228 C35 180,58 133,95 78 C120 42,144 20,168 9"/></g><g fill="#48614a"><ellipse cx="30" cy="194" rx="16" ry="37" transform="rotate(-48 30 194)"/><ellipse cx="51" cy="163" rx="14" ry="33" transform="rotate(-44 51 163)"/><ellipse cx="77" cy="129" rx="16" ry="36" transform="rotate(-52 77 129)"/></g></svg>
+        <div class="eyebrow">With love</div>
+        <div class="big">Thank you</div>
+        <div class="gold-line"></div>
+        <p>Your presence and blessings mean the world to us. We cannot wait to celebrate our special day with you.</p>
+        <p class="signature">Kaviya Sri &amp; Aswin Shiva</p>
+      </article>
+    </section>
+  </main>
+
+  <div id="expired">
+    <div class="expired-card">
+      <div class="names">Kaviya Sri<br>&amp; Aswin Shiva</div>
+      <div class="gold-line"></div>
+      <p>The wedding page is currently unavailable.</p>
+    </div>
+  </div>
+
+  <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+<script>
+(() => {
+  const WEDDING_TIME = new Date('2026-11-20T06:00:00+05:30').getTime();
+  const PAGE_END_TIME = new Date('2026-11-21T00:00:00+05:30').getTime();
+
+  const gate = document.getElementById('gate');
+  const invite = document.getElementById('invite');
+  const expired = document.getElementById('expired');
+  const sealButton = document.getElementById('sealButton');
+
+  if (Date.now() >= PAGE_END_TIME) {
+    gate.classList.add('hidden');
+    invite.classList.add('hidden');
+    expired.classList.add('show');
+    document.body.classList.remove('locked');
+    return;
+  }
+
+  function releaseOliveLeaves(){
+    const layer = document.getElementById('oliveFallLayer');
+    for(let i=0;i<34;i++){
+      const drop=document.createElement('i');
+      const berry=Math.random()<.26;
+      drop.className='olive-drop'+(berry?' berry':'');
+      const fromLeft=i%2===0;
+      drop.style.left=(fromLeft ? (1+Math.random()*24) : (75+Math.random()*24))+'vw';
+      drop.style.animationDelay=(Math.random()*.35)+'s';
+      drop.style.animationDuration=(1.25+Math.random()*.75)+'s';
+      drop.style.setProperty('--drift',((fromLeft?1:-1)*(18+Math.random()*90))+'px');
+      drop.style.setProperty('--spin',(Math.random()*620-310)+'deg');
+      layer.appendChild(drop);
+      setTimeout(()=>drop.remove(),2600);
+    }
+  }
+
+  sealButton.addEventListener('click', () => {
+    gate.classList.add('opening');
+    releaseOliveLeaves();
+    setTimeout(() => {
+      invite.classList.add('visible');
+      document.body.classList.remove('locked');
+    }, 1200);
+    setTimeout(() => gate.classList.add('opened'), 1650);
+  }, { once:true });
+
+  const els = {
+    days: document.getElementById('days'),
+    hours: document.getElementById('hours'),
+    minutes: document.getElementById('minutes'),
+    seconds: document.getElementById('seconds')
+  };
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function updateCountdown(){
+    let diff = Math.max(0, WEDDING_TIME - Date.now());
+    const d = Math.floor(diff / 86400000); diff %= 86400000;
+    const h = Math.floor(diff / 3600000); diff %= 3600000;
+    const m = Math.floor(diff / 60000); diff %= 60000;
+    const s = Math.floor(diff / 1000);
+    els.days.textContent = d; els.hours.textContent = pad(h); els.minutes.textContent = pad(m); els.seconds.textContent = pad(s);
+  }
+  updateCountdown(); setInterval(updateCountdown,1000);
+
+  const canvas = document.getElementById('scratchCanvas');
+  const card = document.getElementById('scratchCard');
+  const help = document.getElementById('scratchHelp');
+  const ctx = canvas.getContext('2d', { willReadFrequently:true });
+  let scratching = false, revealed = false, touched = false;
+
+  function setupScratch(){
+    const rect = card.getBoundingClientRect();
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(rect.width * ratio); canvas.height = Math.round(rect.height * ratio);
+    canvas.style.width = rect.width + 'px'; canvas.style.height = rect.height + 'px';
+    ctx.setTransform(ratio,0,0,ratio,0,0);
+    const g = ctx.createLinearGradient(0,0,rect.width,rect.height);
+    g.addColorStop(0,'#314332'); g.addColorStop(.58,'#526552'); g.addColorStop(1,'#aa8b55');
+    ctx.globalCompositeOperation='source-over'; ctx.fillStyle=g; ctx.fillRect(0,0,rect.width,rect.height);
+    ctx.strokeStyle='rgba(247,240,223,.55)'; ctx.lineWidth=1; ctx.strokeRect(12,12,rect.width-24,rect.height-24);
+    ctx.fillStyle='rgba(247,240,223,.96)'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.font='600 12px Cinzel, serif';
+    ctx.fillText('SCRATCH TO REVEAL',rect.width/2,rect.height/2);
+  }
+  function pos(e){ const rect=canvas.getBoundingClientRect(); const p=e.touches ? e.touches[0] : e; return {x:p.clientX-rect.left,y:p.clientY-rect.top}; }
+  function scratchAt(e){
+    if(!scratching || revealed) return; e.preventDefault(); const {x,y}=pos(e);
+    ctx.globalCompositeOperation='destination-out'; ctx.beginPath(); ctx.arc(x,y,26,0,Math.PI*2); ctx.fill();
+    if(!touched){ touched=true; setTimeout(revealDate,180); }
+  }
+  function revealDate(){
+    if(revealed) return; revealed=true; canvas.style.transition='opacity .65s ease'; canvas.style.opacity='0'; help.textContent='20 November 2026 ✦'; burstConfetti(); setTimeout(()=>canvas.style.pointerEvents='none',700);
+  }
+  canvas.addEventListener('pointerdown',e=>{scratching=true;scratchAt(e)});
+  canvas.addEventListener('pointermove',scratchAt); window.addEventListener('pointerup',()=>scratching=false);
+  canvas.addEventListener('touchstart',e=>{scratching=true;scratchAt(e)},{passive:false}); canvas.addEventListener('touchmove',scratchAt,{passive:false}); window.addEventListener('touchend',()=>scratching=false);
+
+  function burstConfetti(){
+    const layer=document.getElementById('confettiLayer'); const colors=['#c9a75b','#dfc886','#314332','#66725d','#f1e5c5'];
+    for(let i=0;i<24;i++){
+      const bit=document.createElement('i'); bit.className='confetti'; bit.style.left=(10+Math.random()*80)+'vw'; bit.style.background=colors[Math.floor(Math.random()*colors.length)]; bit.style.setProperty('--x',((Math.random()-.5)*150)+'px'); bit.style.setProperty('--r',(Math.random()*720-360)+'deg'); bit.style.animationDelay=(Math.random()*.22)+'s'; bit.style.animationDuration=(1.25+Math.random()*.75)+'s'; layer.appendChild(bit); setTimeout(()=>bit.remove(),2400);
+    }
+  }
+
+  setupScratch(); window.addEventListener('resize',()=>{ if(!revealed) setupScratch(); });
+})();
+</script>
+</body>
+</html>
